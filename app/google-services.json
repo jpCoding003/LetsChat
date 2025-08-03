@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "984678607294",
+    "project_id": "letschat-f7af2",
+    "storage_bucket": "letschat-f7af2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984678607294:android:6d7dabc03d1531be73b1ef",
+        "android_client_info": {
+          "package_name": "com.tops.letschat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjtnVzbVin2Kmt_D9xdQKKumfgoc8W2fA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
