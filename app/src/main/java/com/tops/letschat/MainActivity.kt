@@ -39,7 +39,8 @@ class MainActivity : AppCompatActivity() {
             tab.text = when (position) {
                 0 -> "CHATS"
                 1 -> "USERS"
-                2 -> "PROFILE"
+                2 -> "REQUESTS"
+                3 -> "PROFILE"
                 else -> null
             }
         }.attach()

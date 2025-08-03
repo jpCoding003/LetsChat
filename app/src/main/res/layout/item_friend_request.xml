@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -26,21 +25,27 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:text="User Name" />
+            android:text="User Name" />
 
         <TextView
-            android:id="@+id/user_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="User status goes here" />
-
-        <Button
-            android:id="@+id/btn_addnewfriend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_marginEnd="8dp"/>
+            android:text="Wants to be your friend" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accept"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_marginEnd="8dp"/>
+
+    <Button
+        android:id="@+id/btn_decline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Decline"
+        style="?attr/materialButtonOutlinedStyle"/>
 
 </LinearLayout>

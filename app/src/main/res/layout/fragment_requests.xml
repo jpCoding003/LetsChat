@@ -1,21 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- fragment_requests.xml -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.ChatsFragment">
+    android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chats_recycler_view"
+        android:id="@+id/requests_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_chat" />
+        tools:listitem="@layout/item_friend_request" />
 
     <TextView
-        android:id="@+id/tv_no_chats"
+        android:id="@+id/tv_no_requests"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No chats yet. Add some friends!"
+        android:text="No new friend requests"
         android:layout_gravity="center"
         android:visibility="gone"/>
 
