@@ -34,7 +34,13 @@ class ProfileFragment : Fragment() {
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             result.data?.data?.let { imageUri ->
-                // Once we have the image URI, tell the ViewModel to upload it
+                // --- FIX PART 1: IMMEDIATE UI UPDATE ---
+                // Load the selected image into the ImageView right away for instant feedback.
+                Glide.with(this)
+                    .load(imageUri)
+                    .into(binding.profileImage)
+
+                // Now, tell the ViewModel to upload the image in the background.
                 profileViewModel.updateProfileImage(imageUri)
             }
         }

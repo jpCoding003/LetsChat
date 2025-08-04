@@ -5,5 +5,6 @@ data class User(
     val name: String = "",
     val email: String = "",
     val profileImageUrl: String = "",
-    val status: String = "Hey there! I am using FirebaseChatApp."
+    val status: String = "Hey there! I am using FirebaseChatApp.",
+    val fcmToken: String = "" // New field for the notification token
 )

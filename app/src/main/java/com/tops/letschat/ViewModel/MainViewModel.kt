@@ -41,6 +41,17 @@ class MainViewModel : ViewModel() {
         fetchCurrentUser()
     }
 
+    /**
+     * New function to remove a friend.
+     * It deletes the friendship record for both users.
+     */
+    fun removeFriend(friendId: String) = viewModelScope.launch {
+        // Remove friend for the current user
+        database.getReference("friends").child(currentUserId).child(friendId).removeValue().await()
+        // Remove current user from the other person's friend list
+        database.getReference("friends").child(friendId).child(currentUserId).removeValue().await()
+    }
+
     private fun fetchFriends() {
         val friendsRef = database.getReference("friends").child(currentUserId)
         friendsRef.addValueEventListener(object : ValueEventListener {
@@ -140,12 +151,16 @@ class MainViewModel : ViewModel() {
     }
 
     private fun fetchCurrentUser() {
-        if (currentUserId != null) {
-            database.getReference("users").child(currentUserId).get().addOnSuccessListener {
-                val user = it.getValue(User::class.java)
-                _currentUserData.postValue(user!!)
-            }
-        }
+        database.getReference("users").child(currentUserId)
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val user = snapshot.getValue(User::class.java)
+                    _currentUserData.postValue(user!!)
+                }
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle error
+                }
+            })
     }
 
     fun logout() {

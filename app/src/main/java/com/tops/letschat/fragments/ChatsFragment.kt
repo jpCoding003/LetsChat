@@ -34,7 +34,9 @@ class ChatsFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        chatsAdapter = ChatsAdapter(emptyList())
+        chatsAdapter = ChatsAdapter(emptyList()){ friend ->
+            viewModel.removeFriend(friend.uid)
+        }
         binding.chatsRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = chatsAdapter
